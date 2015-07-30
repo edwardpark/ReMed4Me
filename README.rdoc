@@ -1,28 +1,22 @@
 == README
+DON'T FORGET 2 BRANCH PER FEATURE
+BE JUDICIOUS WITH YOUR COMMITS, I want to be able to actually back track and know what i'm going to.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+sun => I want to be working on finishing if not finished with basic MVP today, if you can finish them earlier all the better
+because the MVP -> V1 jump is going to be big. conceptually you should have a basic understanding and plan though.
+mon => AM finishing MVP, Quick Retro and Pivot V1/V2 product backlog. V1 feature implementations.
+tues => V1 feature implementations ...and V2 if possible
+wed => majority of front end overhauling happening today if you want , up till should be just simple pieces. If feature is giving you a fire and
+it's not MVP stop and reassess at 12pm if you can make real progress to 4pm, otherwise cut it.
+thurs => working on small css touches and working on the video presentation @ 7pm.
 
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+MVP
+---
+- As a user, I want to authenticate a account, because I want to be able to have a unique and individual account.
+- As a user, I want to configure a account with my name and email, so that I can personalize my account
+- As a user, I want to a add a medication (size,color,dosage) , because I want to keep track of what medications I am taking
+- As a user, I want to see a dash-board of all my medications to take throughout the day, because I want to see a nice visualization.
+- As a user, I want to click on each medication and see it's information and click if I have taken || skipped it so that I can keep track.
+
+**get this to a basic working CSS build so that you'd only need the 48hour buffer to clean it up
