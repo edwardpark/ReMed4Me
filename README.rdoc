@@ -4,9 +4,10 @@ BE JUDICIOUS WITH YOUR COMMITS, I want to be able to actually back track and kno
 
 mon =>  MVP
 tues => Quick Retro and pivot, V1 feature implementations ...and V2 if possible
-wed => V1 ..V2 Implmentation , Reasses Features at 4pm wed. 
-thurs => want majority of front end last minute overhauling happening today if you want. If feature is giving you a fire and it's not MVP cut it. 8pm work on video . 
+wed => V1 ..V2 Implmentation , Reasses Features at 4pm wed.
+thurs => want majority of front end last minute overhauling happening today if you want. If feature is giving you a fire and it's not MVP cut it. 8pm work on video .
 
+TRELLO BOARD: https://trello.com/b/YeJHUPAG/remed4me
 
 MVP
 ---
