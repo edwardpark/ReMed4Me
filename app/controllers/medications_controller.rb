@@ -8,17 +8,35 @@ class MedicationsController < ApplicationController
   end
 
   def create
-    binding.pry
     @medication = current_user.medications.build(check_params)
-    binding.pry
     @medication.save
-    binding.pry
     redirect_to @medication
   end
 
   def show
     @medication = Medication.find(params[:id])
   end
+
+  def edit
+    @medication = Medication.find(params[:id])
+  end
+
+  def update
+    @medication = Medication.find(params[:id])
+    if @medication.update( check_params )
+        redirect_to @medication
+    else
+      render 'edit'
+    end
+  end
+
+  def destroy
+    @medication = Medication.find(params[:id])
+    @medication.destroy
+
+    redirect_to medications_path
+  end
+
 
   private
 
