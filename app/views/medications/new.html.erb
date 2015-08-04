@@ -14,13 +14,13 @@
     <%= f.number_field :dosage %>
   </p>
  <p>How often do you take this Medication?</p>
-  <p><%= check_box_tag(:morning) %><%= label_tag(:morning, "Morning") %></p>
+  <p><%= f.check_box(:morning) %><%= label_tag(:morning, "Morning") %></p>
 
-  <p><%= check_box_tag(:midday) %><%= label_tag(:midday, "Midday") %></p>
+  <p><%= f.check_box(:midday) %><%= label_tag(:midday, "Midday") %></p>
 
-  <p><%= check_box_tag(:afternoon) %><%= label_tag(:afternoon, "Afternoon") %></p>
+  <p><%= f.check_box(:afternoon) %><%= label_tag(:afternoon, "Afternoon") %></p>
 
-  <p><%= check_box_tag(:evening) %><%= label_tag(:evening, "Evening") %></p>
+  <p><%= f.check_box(:evening) %><%= label_tag(:evening, "Evening") %></p>
 
   <p>
     <%= f.submit %>
