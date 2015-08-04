@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  interval: MyString
+  taken: false
+  medication_id: 
+
+two:
+  interval: MyString
+  taken: false
+  medication_id: 

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150804110725) do
+ActiveRecord::Schema.define(version: 20150804140439) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -28,6 +28,16 @@ ActiveRecord::Schema.define(version: 20150804110725) do
   end
 
   add_index "medications", ["user_id"], name: "index_medications_on_user_id", using: :btree
+
+  create_table "reminders", force: :cascade do |t|
+    t.string   "interval"
+    t.boolean  "taken"
+    t.integer  "medication_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
+
+  add_index "reminders", ["medication_id"], name: "index_reminders_on_medication_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -48,4 +58,5 @@ ActiveRecord::Schema.define(version: 20150804110725) do
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
   add_foreign_key "medications", "users"
+  add_foreign_key "reminders", "medications"
 end
