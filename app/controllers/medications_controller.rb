@@ -8,8 +8,10 @@ class MedicationsController < ApplicationController
   end
 
   def create
+    binding.pry
     @medication = current_user.medications.build(check_params)
     @medication.save
+    binding.pry
     redirect_to @medication
   end
 
