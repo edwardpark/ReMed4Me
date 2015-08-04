@@ -8,12 +8,9 @@ class MedicationsController < ApplicationController
   end
 
   def create
-    debugger
     @medication = current_user.medications.build(check_params)
     @medication.save!
-  debugger
-    set_reminders(params[:reminders],@medication) #go through and create reminders ,@medication
-
+    create_reminders(params[:reminders],@medication) #go through and create reminders ,@medication
     redirect_to @medication
   end
 
@@ -22,7 +19,10 @@ class MedicationsController < ApplicationController
   end
 
   def edit
+    binding.pry
     @medication = Medication.find(params[:id])
+    @reminders = @medication.reminders.all
+
   end
 
   def update
@@ -38,7 +38,6 @@ class MedicationsController < ApplicationController
   def destroy
     @medication = Medication.find(params[:id])
     @medication.destroy
-
     redirect_to medications_path
   end
 
@@ -49,10 +48,9 @@ class MedicationsController < ApplicationController
     params.require(:medication).permit(:name,:description,:dosage)
   end
 
-  def set_reminders(reminder_data, medication)
+  def create_reminders(reminder_data, medication)
     reminder_data.each do |interval, should_create_reminder|
-      medication.reminders.create(interval: interval) if should_create_reminder == "1"
-      medication.reminders.destroy(interval: interval) if should_create_reminder == "0" #will this throw a error if reminder doesn't exist?
+      medication.reminders.create(interval: interval) if should_create_reminder == "1" #how to prevent duplicates when update?
     end
   end
 
