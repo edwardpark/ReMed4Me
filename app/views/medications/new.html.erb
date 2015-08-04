@@ -1,0 +1,28 @@
+<h1>add new medication</h1>
+
+<%= form_for @medication do |f| %>
+  <p>
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :description %><br>
+    <%= f.text_area :description %>
+  </p>
+  <p>
+    <%= f.label :dosage %><br>
+    <%= f.number_field :dosage %>
+  </p>
+ <p>How often do you take this Medication?</p>
+  <p><%= check_box_tag(:morning) %><%= label_tag(:morning, "Morning") %></p>
+
+  <p><%= check_box_tag(:midday) %><%= label_tag(:midday, "Midday") %></p>
+
+  <p><%= check_box_tag(:afternoon) %><%= label_tag(:afternoon, "Afternoon") %></p>
+
+  <p><%= check_box_tag(:evening) %><%= label_tag(:evening, "Evening") %></p>
+
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
