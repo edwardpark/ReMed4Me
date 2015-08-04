@@ -11,16 +11,15 @@
     <%= f.label :dosage %><br>
     <%= f.number_field :dosage %>
   </p>
- <p>How often do you take this Medication?</p>
-    <p><%= f.check_box :morning %>
-    <%= f.label :morning," Morning " %></p>
-    <p><%= f.check_box :midday %>
-    <%= f.label :midday," midday " %></p>
-    <p><%= f.check_box :afternoon %>
-    <%= f.label :afternoon," afternoon " %></p>
-    <p><%= f.check_box :evening %>
-    <%= f.label :evening," evening " %></p>
 
-      <%= f.submit %>
+  <p>How often do you take this Medication?</p>
+  <%= fields_for(:reminders) do |r| %>
 
+    <% Reminder.default_intervals.each do |interval| %>
+      <p><%= r.label interval, interval %></p>
+      <p><%= r.check_box interval %></p>
+    <% end %>
+  <% end %>
+
+  <%= f.submit %>
 <% end %>
