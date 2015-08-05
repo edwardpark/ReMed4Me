@@ -1,6 +1,6 @@
 <h1>show main controller </h1>
 <% @medication.each do |medication| %>
-  <p><%= medication.name %>, <%= medication.description %></p>
+  <p><%= medication.name %> (<%= medication.dosage %>)</p>
   <%= link_to "edit medication", edit_medication_path(medication) %>
   <%= link_to "delete medication",medication_path(medication), method: :delete %>
 <% end %>

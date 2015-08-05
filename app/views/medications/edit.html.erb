@@ -1,5 +1,7 @@
 <h1>editing medication</h1>
+
 <%= form_for @medication do |f| %>
+
   <p>
     <%= f.label :name %><br>
     <%= f.text_field :name %>
@@ -12,15 +14,14 @@
     <%= f.label :dosage %><br>
     <%= f.number_field :dosage %>
   </p>
-
-  <p>How often do you take this Medication?</p>
-  <%= fields_for(:reminders) do |r| %>
-
-    <% Reminder.default_intervals.each do |interval| %>
-      <p><%= r.label interval, interval %></p>
-      <p><%= r.check_box interval %></p>
-    <% end %>
-  <% end %>
+  <p>I'm in Section 1.</p>
 
   <%= f.submit %>
 <% end %>
+<h2>Reminders</h2>
+<% @reminders.each do |reminder| %>
+  <p><%= reminder.interval %>
+    <%= link_to "Delete",[@medication,reminder], method: :delete,class:"btn-sm btn-danger" %>
+</p>
+<% end %>
+<%= link_to "Add New Reminder",new_medication_reminder_path(@medication),class:"btn btn-primary" %>

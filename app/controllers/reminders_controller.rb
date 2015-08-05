@@ -1,10 +1,6 @@
 class RemindersController < ApplicationController
   def index
-    #create @morning_reminders
-    #create @midday_reminders
-    #create @afternoon_reminders
-    #create @evening_reminders
-
+#nope nevermind it wont work because nested within /medications/:id 
   end
 
   def new
@@ -12,6 +8,6 @@ class RemindersController < ApplicationController
   end
 
   def create
-  
+
   end
 end
