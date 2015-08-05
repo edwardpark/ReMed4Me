@@ -14,12 +14,18 @@
 
      <div class="tab-pane active" id="tab1"> <!-- morning -->
        <ul class="nav nav-tabs nav-stacked">
-          <li>
 
-        name: <%= @morning_medication.name  %>, dose(mg): <%= @morning_medication.dosage %>
-        <div class="btn btn-xs btn-primary"> Taken? </div>
+        <% @morning_reminders.each do |f| %>
+            <li>
+      
+            <%= f.medication.name %>, (<%= f.medication.dosage %>) <div class="btn btn-xs btn-primary"> Taken? </div>
+            </li>
 
-          </li>
+        <% end %>
+
+
+
+
        </ul>
      </div>
 
