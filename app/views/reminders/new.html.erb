@@ -1,0 +1,14 @@
+<h1>Add new Reminder for <%= @medication.name %> </h1>
+
+<%= form_for @medication, :url=>new_medication_reminder_path(@medication) do |f| %>
+  <p>How often do you take this Medication?</p>
+  <%= fields_for(:reminders) do |r| %>
+
+    <% Reminder.default_intervals.each do |interval| %>
+      <p><%= r.label interval, interval %></p>
+      <p><%= r.check_box interval %></p>
+    <% end %>
+  <% end %>
+
+  <%= f.submit "add new reminder" %>
+<% end %>

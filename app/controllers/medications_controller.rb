@@ -16,10 +16,11 @@ class MedicationsController < ApplicationController
 
   def show
     @medication = Medication.find(params[:id])
+    @reminders = @medication.reminders.all
   end
 
   def edit
-    
+
     @medication = Medication.find(params[:id])
     @reminders = @medication.reminders.all
 
