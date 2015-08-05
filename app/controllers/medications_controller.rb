@@ -19,7 +19,7 @@ class MedicationsController < ApplicationController
   end
 
   def edit
-    binding.pry
+    
     @medication = Medication.find(params[:id])
     @reminders = @medication.reminders.all
 

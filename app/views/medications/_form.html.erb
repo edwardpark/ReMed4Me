@@ -14,7 +14,7 @@
 
   <p>How often do you take this Medication?</p>
   <%= fields_for(:reminders) do |r| %>
-<%= binding.pry %>
+
     <% Reminder.default_intervals.each do |interval| %>
       <p><%= r.label interval, interval %></p>
       <p><%= r.check_box interval %></p>
