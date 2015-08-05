@@ -1,4 +1,6 @@
-<h1>Primary Index Page</h1>
+<div class="page-header">
+  <h1>Reminders</h1>
+</div>
 
 
  <div class="tabbable"> <!-- Only required for left/right tabs -->
@@ -15,15 +17,15 @@
           <li>
 
         name: <%= @morning_medication.name  %>, dose(mg): <%= @morning_medication.dosage %>
-        <div class="btn primary"> Taken? </div>
-        
+        <div class="btn btn-xs btn-primary"> Taken? </div>
+
           </li>
        </ul>
      </div>
 
    </div>
 
-     <p><%= link_to "Add a New Medication + Reminder!",new_medication_path %></p>
+     <p><%= link_to "Add a New Medication + Reminder!",new_medication_path,class:"btn btn-primary" %></p>
 
 
  </div>
