@@ -8,7 +8,11 @@ Rails.application.configure do
 
   # Do not eager load code on boot.
   config.eager_load = false
-  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 } #for devise
+
+  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+  #what does this do? what this doing is setting up where email is sending out.
+  #so what this does is setup rails action_mailer to then indicate that we are using local host and get around it.
+
   # Show full error reports and disable caching.
   config.consider_all_requests_local       = true
   config.action_controller.perform_caching = false
