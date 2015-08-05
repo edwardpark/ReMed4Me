@@ -11,7 +11,7 @@ class MedicationsController < ApplicationController
     @medication = current_user.medications.build(check_params)
     @medication.save!
     create_reminders(params[:reminders],@medication) #go through and create reminders ,@medication
-    redirect_to @medication
+    redirect_to medications_path
   end
 
   def show
@@ -30,7 +30,7 @@ class MedicationsController < ApplicationController
     @medication = Medication.find(params[:id])
     if @medication.update( check_params )
         #reset the reminders themsevles here.
-        redirect_to @medication
+        redirect_to medications_path
     else
       render 'edit'
     end
