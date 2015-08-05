@@ -1,3 +1,27 @@
 <h1>add new medication</h1>
 
-<%= render 'form' %>
+<%= form_for @medication do |f| %>
+  <p>
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :description %><br>
+    <%= f.text_area :description %>
+  </p>
+  <p>
+    <%= f.label :dosage %><br>
+    <%= f.number_field :dosage %>
+  </p>
+
+  <p>How often do you take this Medication?</p>
+  <%= fields_for(:reminders) do |r| %>
+
+    <% Reminder.default_intervals.each do |interval| %>
+      <p><%= r.label interval, interval %></p>
+      <p><%= r.check_box interval %></p>
+    <% end %>
+  <% end %>
+
+  <%= f.submit %>
+<% end %>
