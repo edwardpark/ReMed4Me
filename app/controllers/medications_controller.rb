@@ -11,6 +11,11 @@ class MedicationsController < ApplicationController
     @medication = current_user.medications.build(check_params)
     @medication.save!
     create_reminders(params[:reminders],@medication) #go through and create reminders ,@medication
+      #i know this is super ugly but last minute patch/hack
+        @reminder = Reminder.last
+        @reminder.user_id = @medication.user_id
+        @reminder.save
+
     redirect_to medications_path
   end
 
