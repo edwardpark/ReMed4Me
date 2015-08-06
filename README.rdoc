@@ -18,3 +18,7 @@ MVP
 - As a user, I want to click on each medication and see it's information and click if I have taken || skipped it so that I can keep track.
 
 **get this to a basic working CSS build so that you'd only need the 24hour buffer to clean it up
+
+Deployed:
+https://intense-brook-1736.herokuapp.com/
+https://git.heroku.com/intense-brook-1736.git
