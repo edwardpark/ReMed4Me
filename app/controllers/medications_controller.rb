@@ -1,6 +1,6 @@
 class MedicationsController < ApplicationController
   def index
-    binding.pry
+    
     @medication = current_user.medications
   end
 
