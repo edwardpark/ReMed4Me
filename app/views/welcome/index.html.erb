@@ -17,8 +17,9 @@
         <% @morning_reminders.each do |f| %>
             <li>
             <%= f.medication.name %>, (<%= f.medication.dosage %>)
-              <% if f.taken = true %>
-                #something
+              <% if f.taken == true %>
+              <% binding.pry %>
+                  <%= button_to "Take?", medication_reminder_path(f.medication,f),method: :put,remote: true,style:"display:none;"  %>
               <% else %>
                 <%= button_to "Take?", medication_reminder_path(f.medication,f),method: :put,remote: true  %>
               <% end %>
