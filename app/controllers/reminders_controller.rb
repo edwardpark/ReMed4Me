@@ -25,11 +25,11 @@ class RemindersController < ApplicationController
 
     @medication = Medication.find(params[:medication_id])
     create_reminders(params[:reminders],@medication) #go through and create reminders ,@medication
-    binding.pry
+  
       @reminder = Reminder.last
       @reminder.user_id = @medication.user_id
       @reminder.save
-    binding.pry
+
     redirect_to edit_medication_path(@medication)
   end
 
