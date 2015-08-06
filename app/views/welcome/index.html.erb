@@ -16,7 +16,7 @@
        <ul class="nav nav-tabs nav-stacked">
         <% @morning_reminders.each do |f| %>
             <li>
-            <%= f.medication.name %>, (<%= f.medication.dosage %>) <div class="btn btn-xs btn-primary"> Taken? </div>
+            <%= f.medication.name %>, (<%= f.medication.dosage %>) <%= button_to "Take?", medication_reminder_path(f.medication,f),method: :put,remote: true  %>
             </li>
         <% end %>
        </ul>

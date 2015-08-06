@@ -9,10 +9,10 @@ class RemindersController < ApplicationController
   end
 
   def update
-
+    binding.pry
     @medication = Medication.find(params[:medication_id])
     create_reminders(params[:reminders],@medication) #go through and create reminders ,@medication
-    redirect_to edit_medication_path(@medication) 
+    redirect_to edit_medication_path(@medication)
   end
 
   def destroy
