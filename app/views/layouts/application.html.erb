@@ -15,6 +15,8 @@
           </div>
           <div class="collapse navbar-collapse navbar-menubuilder">
               <ul class="nav navbar-nav navbar-left">
+
+
                   <li><a href="/">Reminders</a>
                   </li>
                   <li><a href="/medications">Manage Medications</a>
@@ -23,12 +25,12 @@
                   </li>
                   <% if current_user %>
                       <li><%= link_to 'Signout', destroy_user_session_path, :method => :delete %></li>
+                      <li class="round-image-50"><%= image_tag(current_user.avatar.url(:thumb)) %></li>
+
                   <% else %>
                       <li><%= link_to 'Signup', new_user_registration_path %></li>
                       <li><%= link_to 'Login', new_user_session_path %></li>
               <% end %>
-
-              </ul>
           </div>
       </div>
   </div>

@@ -1,4 +1,5 @@
 class WelcomeController < ApplicationController
+  before_action :authenticate_user!
   def index
     @morning_reminders = Reminder.where("interval ='morning'")
     @midday_reminders = Reminder.where("interval ='midday'")
