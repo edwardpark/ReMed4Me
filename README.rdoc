@@ -22,3 +22,4 @@ MVP
 Deployed:
 https://intense-brook-1736.herokuapp.com/
 https://git.heroku.com/intense-brook-1736.git
+Note: paperclip picture upload works but i guess issue is that heroku will wipe it at some point
