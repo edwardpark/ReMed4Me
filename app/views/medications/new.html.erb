@@ -18,10 +18,9 @@
   <%= fields_for(:reminders) do |r| %>
 
     <% Reminder.default_intervals.each do |interval| %>
-      <p><%= r.label interval, interval %></p>
-      <p><%= r.check_box interval %></p>
+      <p><%= r.label interval, interval %>   <%= r.check_box interval %></p>
     <% end %>
   <% end %>
 
-  <%= f.submit %>
+  <%=  f.submit %>
 <% end %>

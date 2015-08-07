@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
   root 'welcome#index'
-
+  get '/welcome/show' => "welcome#show"
   resources :medications do
     resources :reminders
   end

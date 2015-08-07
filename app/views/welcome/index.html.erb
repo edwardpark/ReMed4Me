@@ -16,20 +16,82 @@
        <ul class="nav nav-tabs nav-stacked">
         <% @morning_reminders.each do |f| %>
               <% if f.medication != nil %>
+                <div class ="well well-sm">
                 <li>
-                  <%= f.medication.name %>, (<%= f.medication.dosage %>)
+                  <span class="glyphicon glyphicon-leaf"> </span><%= f.medication.name %>, (<%= f.medication.dosage %>mg)
                   <% if f.taken == true %>
-                
+
                       <%= button_to "Take?", medication_reminder_path(f.medication,f),method: :put,remote: true,style:"display:none;"  %>
                   <% else %>
-                    <%= button_to "Take?", medication_reminder_path(f.medication,f),method: :put,remote: true  %>
+                    <%= button_to "Take?", medication_reminder_path(f.medication,f),method: :put,remote: true ,class:"button btn-success" %>
                   <% end %>
                 </li>
+              </div>
               <% end %>
         <%end%>
        </ul>
      </div>
 
+     <div class="tab-pane active" id="tab2"> <!-- midday -->
+       <ul class="nav nav-tabs nav-stacked">
+        <% @midday_reminders.each do |f| %>
+              <% if f.medication != nil %>
+
+              <div class ="well well-sm">
+                <li>
+                  <span class="glyphicon glyphicon-leaf"> </span><%= f.medication.name %>, (<%= f.medication.dosage %>mg)
+                  <% if f.taken == true %>
+
+                      <%= button_to "Take?", medication_reminder_path(f.medication,f),method: :put,remote: true,style:"display:none;"  %>
+                  <% else %>
+                    <%= button_to "Take?", medication_reminder_path(f.medication,f),method: :put,remote: true ,class:"button btn-success" %>
+                  <% end %>
+                </li>
+              </div>
+              <% end %>
+        <%end%>
+       </ul>
+     </div>
+
+     <div class="tab-pane active" id="tab3"> <!-- afternoon -->
+       <ul class="nav nav-tabs nav-stacked">
+        <% @afternoon_reminders.each do |f| %>
+              <% if f.medication != nil %>
+              <div class ="well well-sm">
+                <li>
+                  <span class="glyphicon glyphicon-leaf"> </span><%= f.medication.name %>, (<%= f.medication.dosage %>mg)
+                  <% if f.taken == true %>
+
+                      <%= button_to "Take?", medication_reminder_path(f.medication,f),method: :put,remote: true,style:"display:none;"  %>
+                  <% else %>
+                    <%= button_to "Take?", medication_reminder_path(f.medication,f),method: :put,remote: true ,class:"button btn-success" %>
+                  <% end %>
+                </li>
+              </div>
+              <% end %>
+        <%end%>
+       </ul>
+     </div>
+
+     <div class="tab-pane active" id="tab4"> <!-- evening -->
+       <ul class="nav nav-tabs nav-stacked">
+        <% @evening_reminders.each do |f| %>
+        <div class ="well well-sm">
+              <% if f.medication != nil %>
+                <li>
+                  <span class="glyphicon glyphicon-leaf"> </span><%= f.medication.name %>, (<%= f.medication.dosage %>mg)
+                  <% if f.taken == true %>
+
+                      <%= button_to "Take?", medication_reminder_path(f.medication,f),method: :put,remote: true,style:"display:none;"  %>
+                  <% else %>
+                    <%= button_to "Take?", medication_reminder_path(f.medication,f),method: :put,remote: true ,class:"button btn-success" %>
+                  <% end %>
+                </li>
+              </div>
+              <% end %>
+        <%end%>
+       </ul>
+     </div>
    </div>
 
      <p><%= link_to "Add a New Medication + Reminder!",new_medication_path, class:"btn btn-primary" %></p>

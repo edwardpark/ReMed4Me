@@ -11,21 +11,20 @@ class RemindersController < ApplicationController
   def update
 
 
-    if request.xhr?
+    if request.xhr? #alias for xml_http_request?()
 
       head :ok
       @reminder_u = Reminder.find(params[:id])
       @reminder_u.taken = true
       @reminder_u.save
 
-      redirect_to edit_medication_path(@medication)
-    else
-      redirect_to edit_medication_path(@medication)
+      redirect_to root_path
+
     end
 
     @medication = Medication.find(params[:medication_id])
     create_reminders(params[:reminders],@medication) #go through and create reminders ,@medication
-  
+
       @reminder = Reminder.last
       @reminder.user_id = @medication.user_id
       @reminder.save

@@ -9,9 +9,10 @@
       color: rgba(27, 188, 155, 1);
   }
   #custom-bootstrap-menu.navbar-default {
-      font-size: 20px;
+      font-size: 16px;
       background-color: rgba(52, 73, 94, 1);
       border-bottom-width: 0px;
+
   }
   #custom-bootstrap-menu.navbar-default .navbar-nav>li>a {
       color: rgba(255, 255, 255, 1);
@@ -58,4 +59,23 @@
     overflow: hidden;
     text-align: right;
     img { width: 100% }
+}
+
+.glyphicon-plus , .glyphicon-check , .glyphicon-grain{
+  font-size: 3em;
+}
+.show_page{
+text-align: center;
+
+}
+.show_page p {
+  font-size: 1em;
+}
+
+.navbar-right {
+  padding : 12px;
+
+}
+.navbar-brand {
+  font-size: 50px;
 }

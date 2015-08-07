@@ -3,9 +3,9 @@
 </div>
 
 <% @medication.each do |medication| %>
-  <p><%= link_to " #{ medication.name} (#{ medication.dosage })", medication_path(medication)%>
-  <%= link_to "edit", edit_medication_path(medication),class:"btn btn-primary" %>
-  <%= link_to "delete",medication_path(medication), method: :delete ,class:"btn btn-danger"%>
+  <p>  <span class="glyphicon glyphicon-leaf"> </span><%= link_to " #{ medication.name} (#{ medication.dosage }mg)", medication_path(medication)%>
+  <%= link_to "edit", edit_medication_path(medication),class:"btn-sm btn-primary" %>
+  <%= link_to "delete",medication_path(medication), method: :delete ,class:"btn-sm btn-danger"%>
 </p>
 <% end %>
 <%= link_to "Back to Reminders!", "/",class:"btn btn-primary"%>
