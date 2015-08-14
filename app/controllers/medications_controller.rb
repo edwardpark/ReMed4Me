@@ -1,6 +1,6 @@
 class MedicationsController < ApplicationController
   def index
-    
+
     @medication = current_user.medications
   end
 
@@ -13,6 +13,7 @@ class MedicationsController < ApplicationController
     @medication.save!
     create_reminders(params[:reminders],@medication) #go through and create reminders ,@medication
       #i know this is super ugly but last minute patch/hack
+      # mms: No need.  You can find a user through medication.  See Reminder class.
         @reminder = Reminder.last
         @reminder.user_id = @medication.user_id
         @reminder.save
@@ -21,12 +22,12 @@ class MedicationsController < ApplicationController
   end
 
   def show
-    @medication = Medication.find(params[:id])
+    # mms: Limit to this user's medications.  Check for this in other actions too.
+    @medication = current_user.medications.find(params[:id])
     @reminders = @medication.reminders.all
   end
 
   def edit
-
     @medication = Medication.find(params[:id])
     @reminders = @medication.reminders.all
 
@@ -36,6 +37,7 @@ class MedicationsController < ApplicationController
     @medication = Medication.find(params[:id])
     if @medication.update( check_params )
         #reset the reminders themsevles here.
+        # mms: where is the flow we dicussed for reminders updates?
         redirect_to medications_path
     else
       render 'edit'

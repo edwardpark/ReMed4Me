@@ -14,6 +14,8 @@
 
      <div class="tab-pane active" id="tab1"> <!-- morning -->
        <ul class="nav nav-tabs nav-stacked">
+         <!-- mms: "f" is usually reserved for rails form_for vars.  Recommend "reminder" here. -->
+         <!-- mms: Review this for duplication. This code is the same for morning/midday/afternoon/evening. Extract partial, pass collection. -->
         <% @morning_reminders.each do |f| %>
               <% if f.medication != nil %>
                 <div class ="well well-sm">
