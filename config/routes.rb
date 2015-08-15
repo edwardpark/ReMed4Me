@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
   devise_for :users
   root 'welcome#index'
+  # mms: for more clarity, how about
+  # mms: `get '/about' => "welcome#show"`.  SInce welcome#show doesn't really make sense, you could use a non-RESTful action.
+  # mms: `get '/about' => "welcome#about"``
   get '/welcome/show' => "welcome#show"
   resources :medications do
     resources :reminders
